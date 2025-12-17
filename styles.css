@@ -1,0 +1,463 @@
+/* ============================== */
+/* 1. VARIABEL & RESET DASAR */
+/* ============================== */
+:root {
+  --color-primary: #8b4513; /* Cokelat Tua/Kopi */
+  --color-secondary: #f4e9d7; /* Krem Lembut/Beige */
+  --color-accent: #a0522d; /* Cokelat Sedang */
+  --color-text: #333333;
+  --color-light-bg: #fcfcfc;
+
+  /* Font berdasarkan Google Fonts yang ditautkan di HTML */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-light-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+}
+
+h2 {
+  font-size: 2.8em;
+  margin-bottom: 50px;
+}
+
+/* ============================== */
+/* 2. NAVIGATION & HEADER */
+/* ============================== */
+header {
+  background-color: #faf3e8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+nav a:hover {
+  color: var(--color-primary);
+}
+
+/* ============================== */
+/* 3. BUTTONS (CTA) */
+/* ============================== */
+.cta-button {
+  display: inline-block;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.primary-cta {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.primary-cta:hover {
+  background-color: var(--color-accent);
+  box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+}
+
+.secondary-cta {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.secondary-cta:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.nav-cta {
+  padding: 10px 22px;
+  font-size: 0.85em;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+/* ============================== */
+/* 4. HERO SECTION */
+/* ============================== */
+.hero-section {
+  background-color: var(--color-secondary);
+  padding: 100px 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  text-align: left;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image-placeholder {
+  flex: 1;
+  text-align: center;
+}
+
+.muffin-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text h1 {
+  font-size: 3.5em;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.hero-text .tagline {
+  font-size: 1.25em;
+  margin-bottom: 35px;
+}
+
+.shipping-info {
+  margin-top: 15px;
+  font-style: italic;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* ============================== */
+/* 5. BRAND STORY & PRODUCT GRID */
+/* ============================== */
+.story-section {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.story-card {
+  padding: 25px;
+  background-color: var(--color-light-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  text-align: justify;
+}
+
+.story-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* PRODUCT SECTION */
+.product-section {
+  background-color: var(--color-secondary);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4/3; /* Membuat gambar proporsional */
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 20px;
+  text-align: justify;
+}
+
+.product-info h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+.price-tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.1em;
+}
+
+/* ============================== */
+/* 6. PRICING & ORDER SECTION */
+/* ============================== */
+.pricing-section {
+  background-color: #ffffff;
+}
+
+.pricing-flex {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.pricing-card {
+  padding: 40px;
+  border-radius: 10px;
+  flex: 0 1 450px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card .cta-button {
+  margin-top: 25px;
+}
+
+.gift-box-card {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+}
+
+.price-large {
+  font-family: var(--font-heading);
+  font-size: 2.2em;
+  font-weight: bold;
+  color: var(--color-accent);
+  margin: 10px 0 20px;
+}
+
+.order-section {
+  background-color: var(--color-light-bg);
+}
+
+.order-section p {
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.order-cta-group {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.large-cta {
+  font-size: 1.1em;
+  padding: 15px 35px;
+}
+
+.order-note {
+  font-size: 0.85em;
+  margin-top: 25px !important;
+  color: #888;
+  font-style: italic;
+}
+
+/* ============================== */
+/* 7. FOOTER */
+/* ============================== */
+footer {
+  background-color: var(--color-text);
+  color: #e0e0e0;
+  padding: 40px 0;
+  text-align: left;
+}
+
+.footer-logo {
+  color: #ffffff;
+  font-size: 1.8em;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
+}
+
+footer h4 {
+  color: var(--color-secondary);
+  margin-bottom: 15px;
+}
+
+footer a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 20px;
+  color: #999;
+}
+
+/* ============================== */
+/* 8. MEDIA QUERIES (FINAL FIX) */
+/* ============================== */
+
+/* TABLET & MOBILE */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  /* NAVIGATION */
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* HERO SECTION */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-image-placeholder {
+    order: -1;
+  }
+
+  /* PRICING */
+  .pricing-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pricing-card {
+    flex: auto;
+  }
+
+  /* ORDER CTA */
+  .order-cta-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .large-cta {
+    width: 100%;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    text-align: center;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1em;
+  }
+
+  .muffin-img {
+    max-width: 90%;
+  }
+}
